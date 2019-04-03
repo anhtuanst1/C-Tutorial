@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace C_Tutorial
 {
@@ -29,7 +30,7 @@ namespace C_Tutorial
 
             String str = "Hi, I am Tuan";
 
-            Console.WriteLine("\n Kieu object: "+ obj +"\n Kieu dynamic: "+ dem +"\n Kieu string: "+ str +"\n");
+            Console.WriteLine("\n Kieu object: " + obj + "\n Kieu dynamic: " + dem + "\n Kieu string: " + str + "\n");
 
             /* Ep kieu */
             int x = 75;
@@ -64,7 +65,7 @@ namespace C_Tutorial
 
             //Hang
             Console.WriteLine("Hang so trong C#");
-            Console.WriteLine("-------------------");   
+            Console.WriteLine("-------------------");
 
             //khai bao hang so pi
             const double pi = 3.14159;
@@ -76,6 +77,20 @@ namespace C_Tutorial
             Console.WriteLine("\nBan kinh: {0}, Dien tich: {1}", bk, dien_tich);
 
 
+            //List<string>
+            List<string> list = new List<string>();
+            list.Add("abc");
+            list.Add("123");
+            //IEnumerable<object> en = list;
+
+
+            //Ke thua
+            ClassA classa = new ClassA();
+            ClassB classb = new ClassB();
+
+            classa.Height = 20;
+            classb.Height = 10;
+            classb.methodA();
 
 
 
@@ -93,5 +108,40 @@ namespace C_Tutorial
                 Environment.Exit(0);
             }
         }
+    }
+
+    public class ClassA{
+        readonly int str1 = 123;
+        public int Height { get; set; } = 10;
+        public int Width { get; } = 5;
+        private int GiaTri_1 { get; set;  } = 5;
+        protected int GiaTri_2 { get; set; } = 5;
+
+        public int methodA()
+        {
+            return Height;
+        }
+
+        public int methodA(int Height)
+        {
+            return Height;
+        }
+
+        public int methodA(int Height, int Width)
+        {
+            return Height * Width;
+        }
+
+        public enum TimeOfDay
+        {
+            mon=2,
+            tue=3,
+            web=4
+        }
+    }
+
+    public class ClassB : ClassA
+    {
+
     }
 }
