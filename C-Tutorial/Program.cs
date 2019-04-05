@@ -128,15 +128,17 @@ namespace C_Tutorial
             Console.Write("\n ======== Find MIN - MAX | num_array = ");
 
             int[] num_array = new int[] { -8, -98, 12, 97, 55, 22 };
+            int N = 4;
             foreach (int num in num_array)
             {
                 Console.Write("{0} \t", num);
             }
 
-            FindMinMax MinMax = new FindMinMax();
+            MathApp MinMax = new MathApp();
 
             Console.WriteLine("\n Min = {0}", MinMax.FindMin(num_array));
             Console.WriteLine(" Max = {0}", MinMax.FindMax(num_array));
+            Console.WriteLine(" {0}! = {1}", N, MinMax.GiaiThua(N));
 
 
 

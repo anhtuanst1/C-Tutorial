@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C_Tutorial
 {
-    class FindMinMax
+    class MathApp
     {
         public int FindMin(int[] nums)
         {
@@ -22,7 +22,7 @@ namespace C_Tutorial
         public int FindMax(int[] nums)
         {
             int Max = nums[0];
-            foreach(int num in nums)
+            foreach (int num in nums)
             {
                 if (Max <= num)
                 {
@@ -30,6 +30,22 @@ namespace C_Tutorial
                 }
             }
             return Max;
+        }
+
+        //De qui
+        public int GiaiThua(int num)
+        {
+            Console.WriteLine("\t num = {0}", num);
+            int result;
+            if (num==1)
+            {
+                result = 1;
+            }
+            else
+            {
+                result = GiaiThua(num - 1) * num;
+            }
+            return result;
         }
     }
 }
