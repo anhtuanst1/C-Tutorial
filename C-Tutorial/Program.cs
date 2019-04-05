@@ -87,10 +87,63 @@ namespace C_Tutorial
             //Ke thua
             ClassA classa = new ClassA();
             ClassB classb = new ClassB();
+            ClassC classc = new ClassC();
+            ClassD classd = new ClassD();
 
-            classa.Height = 20;
+            classa.Height = 20 > 10 ? (classa.Height - 10) : (classc.methodA(8, 10));
             classb.Height = 10;
             classb.methodA();
+
+            Console.WriteLine("Width = {0}", classc.Width);
+            Console.WriteLine("MethodA = {0}", classc.methodA());
+            Console.WriteLine("MethodA Dien tich = {0}", classc.methodA(5, 10));
+
+            //Mang
+            Console.WriteLine("\n ======== IN gia tri trong mang C1 ");
+            int[] marks = new int[] { 99, 98, 92, 97, 95 };
+            for (int i = 0; i < marks.Length; i++)
+            {
+                Console.WriteLine("Gia tri phan tu {0} = {1}", i, marks[i]);
+            }
+
+            Console.WriteLine("\n ======== IN gia tri trong mang C2 ");
+            foreach(int mark in marks)
+            {
+                Console.WriteLine("\t Gia tri phan tu la : {0}", mark);
+            }
+
+            Console.WriteLine("\n ======== IN gia tri trong mang Key - Value ");
+            IDictionary<string, string> openWith = new Dictionary<string, string>()
+                                                        {
+                                                            { "txt", "notepad.exe" },
+                                                            { "bmp", "paint.exe" },
+                                                            { "rtf", "wordpad.exe" }
+                                                        };
+            foreach (KeyValuePair<string, string> de in openWith)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", de.Key, de.Value);
+            }
+
+            //Find MIN - MAX
+            Console.Write("\n ======== Find MIN - MAX | num_array = ");
+
+            int[] num_array = new int[] { -8, -98, 12, 97, 55, 22 };
+            foreach (int num in num_array)
+            {
+                Console.Write("{0} \t", num);
+            }
+
+            FindMinMax MinMax = new FindMinMax();
+
+            Console.WriteLine("\n Min = {0}", MinMax.FindMin(num_array));
+            Console.WriteLine(" Max = {0}", MinMax.FindMax(num_array));
+
+
+
+
+
+
+
 
 
 
@@ -110,11 +163,12 @@ namespace C_Tutorial
         }
     }
 
-    public class ClassA{
+    public class ClassA
+    {
         readonly int str1 = 123;
         public int Height { get; set; } = 10;
         public int Width { get; } = 5;
-        private int GiaTri_1 { get; set;  } = 5;
+        private int GiaTri_1 { get; set; } = 5;
         protected int GiaTri_2 { get; set; } = 5;
 
         public int methodA()
@@ -134,13 +188,23 @@ namespace C_Tutorial
 
         public enum TimeOfDay
         {
-            mon=2,
-            tue=3,
-            web=4
+            mon = 2,
+            tue = 3,
+            web = 4
         }
     }
 
     public class ClassB : ClassA
+    {
+
+    }
+
+    public class ClassC : ClassB
+    {
+
+    }
+
+    public class ClassD : ClassA
     {
 
     }

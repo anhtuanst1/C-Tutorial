@@ -11,10 +11,18 @@ namespace C_Tutorial
         double width;
 
         //phuong thuc
+        //public void Acceptdetails()
+        //{
+        //    length = 4.5;
+        //    width = 3.5;
+        //}
+
         public void Acceptdetails()
         {
-            length = 4.5;
-            width = 3.5;
+            Console.Write("Nhap chieu dai: ");
+            length = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Nhap chieu rong: ");
+            width = Convert.ToDouble(Console.ReadLine());
         }
 
         //phuong thuc
